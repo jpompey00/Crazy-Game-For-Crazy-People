@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://jiqrna1y3gro"]
+
+[ext_resource type="Script" uid="uid://dc58ghqedrc4a" path="res://scripts/Marker.cs" id="1_algmb"]
+[ext_resource type="Texture2D" uid="uid://dn0x5gxfi2iie" path="res://turn fonts into 64x64/glyphs_64/77.png" id="1_jvy07"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_algmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jvy07")

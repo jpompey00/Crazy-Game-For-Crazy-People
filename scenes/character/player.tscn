@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2jihyjgspimb"]
+
+[ext_resource type="Script" uid="uid://cxg4ayxd6da5q" path="res://scripts/Player.cs" id="1_tum32"]
+[ext_resource type="Texture2D" uid="uid://cirmox2d85pa8" path="res://turn fonts into 64x64/glyphs_64/64.png" id="1_vt0b6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vjlc"]
+size = Vector2(48, 48)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_tum32")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_vt0b6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_0vjlc")
+
+[node name="DebugControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stat Label" type="RichTextLabel" parent="DebugControl"]
+layout_mode = 0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = -36.0
+text = "Hp: 
+Stamina: 
+Strength: 
+Defense: "
+fit_content = true
+
+[node name="Position Label" type="RichTextLabel" parent="DebugControl"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -22.0
+offset_right = 176.0
+offset_bottom = 16.0
+text = "0,0"
+fit_content = true
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Up" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, 22)
+rotation = -3.14159
+scale = Vector2(2, 2)
+target_position = Vector2(0, 40)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Down" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, -22)
+scale = Vector2(2, 2)
+target_position = Vector2(0, 40)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Left" type="RayCast2D" parent="Raycasts"]
+position = Vector2(22, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+target_position = Vector2(0, 40)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Right" type="RayCast2D" parent="Raycasts"]
+position = Vector2(-22, 0)
+rotation = -1.5708
+scale = Vector2(2, 2)
+target_position = Vector2(0, 40)
+collision_mask = 2
+hit_from_inside = true
