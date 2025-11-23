@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btubvh2ikcuuy"]
+
+[ext_resource type="Texture2D" uid="uid://m6qd2scg0lna" path="res://turn fonts into 64x64/glyphs_64/35.png" id="1_bs1nv"]
+[ext_resource type="Script" uid="uid://bx276oapp47o1" path="res://scripts/Obstacle.cs" id="1_rtf1t"]
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_rtf1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+texture_filter = 1
+texture = ExtResource("1_bs1nv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
