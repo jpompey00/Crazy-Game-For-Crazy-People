@@ -1,13 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://jiqrna1y3gro"]
+[gd_scene load_steps=5 format=3 uid="uid://jiqrna1y3gro"]
 
 [ext_resource type="Script" uid="uid://dc58ghqedrc4a" path="res://scripts/Marker.cs" id="1_algmb"]
 [ext_resource type="Texture2D" uid="uid://dn0x5gxfi2iie" path="res://turn fonts into 64x64/glyphs_64/77.png" id="1_jvy07"]
+[ext_resource type="Texture2D" uid="uid://bljf2uxqc701j" path="res://sprites/Sprite-0001.png" id="3_4581k"]
+
+[sub_resource type="Theme" id="Theme_4581k"]
+RichTextLabel/colors/default_color = Color(1, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 8
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_algmb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 0, 1)
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_jvy07")
+
+[node name="New Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4581k")
+
+[node name="CoordinateLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = -9.0
+theme = SubResource("Theme_4581k")
+text = "(-245,-245)"
+fit_content = true
