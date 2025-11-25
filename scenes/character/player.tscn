@@ -12,6 +12,7 @@ script = ExtResource("1_tum32")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_vt0b6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqucboqvqokvv"]
+[gd_scene load_steps=7 format=3 uid="uid://bqucboqvqokvv"]
 
 [ext_resource type="Texture2D" uid="uid://bmny3wem0d0jl" path="res://sprites/background.png" id="1_abxuo"]
 [ext_resource type="Script" uid="uid://bvv3c003deeaj" path="res://scripts/World.cs" id="1_h7ics"]
+[ext_resource type="Script" uid="uid://pfmbbavopm3" path="res://scripts/GameManager.cs" id="2_8xycl"]
 [ext_resource type="PackedScene" uid="uid://c2jihyjgspimb" path="res://scenes/character/player.tscn" id="2_dkfks"]
 [ext_resource type="PackedScene" uid="uid://bat6ielpvw32i" path="res://scenes/enemy/enemy.tscn" id="3_um5ec"]
 [ext_resource type="PackedScene" uid="uid://btubvh2ikcuuy" path="res://scenes/World/obstacle.tscn" id="4_31xnj"]
@@ -9,20 +10,41 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_h7ics")
 
+[node name="Game Manager" type="Node" parent="."]
+script = ExtResource("2_8xycl")
+
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576, 352)
-scale = Vector2(19.375, 11.375)
+position = Vector2(832, 480)
+scale = Vector2(30, 17.75)
 texture = ExtResource("1_abxuo")
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_dkfks")]
-position = Vector2(128, 128)
+position = Vector2(256, 256)
 
 [node name="Enemy" parent="." instance=ExtResource("3_um5ec")]
-position = Vector2(640, 128)
+position = Vector2(768, 256)
 
 [node name="Obstacles" type="Node2D" parent="."]
-position = Vector2(256, 128)
+position = Vector2(384, 256)
 
 [node name="Obstacle0" parent="Obstacles" instance=ExtResource("4_31xnj")]
 position = Vector2(128, 0)
+
+[node name="Obstacle1" parent="Obstacles" instance=ExtResource("4_31xnj")]
+position = Vector2(128, -16)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("4_31xnj")]
+position = Vector2(128, -32)
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource("4_31xnj")]
+position = Vector2(128, -48)
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource("4_31xnj")]
+position = Vector2(128, 16)
+
+[node name="Obstacle5" parent="Obstacles" instance=ExtResource("4_31xnj")]
+position = Vector2(128, 32)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.7, 0.7)

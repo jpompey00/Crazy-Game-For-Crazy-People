@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b0d3e2fjqlhk6" path="res://scripts/Enemy.cs" id="1_a3pup"]
 
 [node name="Enemy" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_a3pup")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

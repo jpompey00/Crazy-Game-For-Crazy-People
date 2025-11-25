@@ -49,10 +49,11 @@ public partial class World : Node2D
 					Obstacle ob = (Obstacle)item;
 					// GD.Print("found");
 					obstacles.Add(ob);
-					GD.Print($"ob.Position : {ob.GlobalPosition}");
+					// GD.Print($"ob.Position : {ob.GlobalPosition}");
 					astarGrid.SetPointSolid((Vector2I)ob.GlobalPosition / 16);
 				}
 			}
+			lastObsCount = obstacles.Count;
 
 			// GD.Print(string.Join(",", obstaclesPositionList));
 		}
